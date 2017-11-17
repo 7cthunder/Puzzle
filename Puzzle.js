@@ -101,6 +101,7 @@ function shuffleHandler() {
 function shuffleTheArr() {
   shuffleArr = new Array();
   tempArr = new Array();
+  sum = 0;
   shuffleArr[15] = 15;
   for (var i = 0; i < 15; i++) {
     var index = Math.floor((Math.random()*15));
@@ -109,7 +110,8 @@ function shuffleTheArr() {
     shuffleArr[index] = i;
     tempArr[index] = i;
   }
-  if (countTheInversionNum(0, 15) % 2 === 1) {
+  countTheInversionNum(0, 14);
+  if (sum % 2 === 1) {
     var temp = shuffleArr[13];
     shuffleArr[13] = shuffleArr[14];
     shuffleArr[14] = temp;
@@ -187,7 +189,7 @@ function Merge(start, end) {
       j = mid + 1,
       k = 0;
   while (i <= mid && j <= end) {
-    if (tempArr[i] <= tempArr[j]) {
+    if (tempArr[i] > tempArr[j]) {
       temp[k] = tempArr[i];
       k++; i++;
     } else {
