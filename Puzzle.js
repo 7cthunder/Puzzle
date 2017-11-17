@@ -1,7 +1,7 @@
 //puzzleArray
 var arr = new Array();
-var shuffleArr,
-    tempArr;
+var shuffleArr = new Array(),
+    tempArr = new Array();
 var sum = 0;
 var puzzleImg = 1;
 
