@@ -32,6 +32,16 @@ var targetIndex,
     emptyIndex;
 
 function clickHandler(event) {
+  //检查拼图是否属于可移动状态
+  for (var i = 0; i < 16; i++) {
+    if (i !== arr[i])
+      break;
+  }
+  if (i === 16) {
+    alert("Please press the '重新开始' button to begin the game!")
+    return;
+  }
+
   targetIndex = arr.indexOf(event.target.puzzleIndex);
   emptyIndex = arr.indexOf(15);
   if ((targetIndex - 1 === emptyIndex && targetIndex % 4 !== 0) ||
