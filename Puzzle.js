@@ -34,7 +34,8 @@ var targetIndex,
 function clickHandler(event) {
   targetIndex = arr.indexOf(event.target.puzzleIndex);
   emptyIndex = arr.indexOf(15);
-  if (targetIndex - 1 === emptyIndex || targetIndex + 1 === emptyIndex ||
+  if ((targetIndex - 1 === emptyIndex && targetIndex % 4 !== 0) ||
+      (targetIndex + 1 === emptyIndex && (targetIndex + 1) % 4 !== 0)||
       targetIndex - 4 === emptyIndex || targetIndex + 4 === emptyIndex) {
     var targetX = targetIndex % 4,
         targetY = Math.floor(targetIndex / 4),
